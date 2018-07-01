@@ -1,0 +1,14 @@
+#!ipxe
+
+:retry_dhcp
+dhcp || goto retry_dhcp
+echo IP address: ${net0/ip} ; echo Subnet mask: ${net0/netmask}
+chain  http://jrsmile.111mb.de/boot.txt || goto notfound
+:notfound
+echo
+echo No netboot configuration was found for this machine. Please go to
+echo http://boot-master.example.com/mac/${mac:hexraw} to configure it if
+echo needed.
+echo
+echo Skipping to the next boot device according to the BIOS Boot Order.
+shell
