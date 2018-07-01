@@ -16,7 +16,6 @@ echo IPv6 DNS: ${dns6}
 echo Domain: ${domain}
 echo ========================================================
 imgfetch http://jrsmile.111mb.de/vmlinuz
-imgfetch http://jrsmile.111mb.de/core.gz
-kernel vmlinuz norestore pause nodhcp vga=792 KEYMAP=DE ip=${net0/ip}:::${net0/netmask}:box:eth0:on httplist=jrsmile.111mb.de/TCL/modules.txt:no-ping
-initrd core.gz
+kernel vmlinuz norestore pause nodhcp vga=792 kmap=qwertz/de-latin1-nodeadkeys ip=${net0/ip}::${gateway}:${net0/netmask}:box:eth0:off:${dns} httplist=jrsmile.111mb.de/TCL/modules.txt
+initrd http://jrsmile.111mb.de/core.gz
 boot
