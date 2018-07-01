@@ -15,7 +15,8 @@ echo DNS: ${dns}
 echo IPv6 DNS: ${dns6}
 echo Domain: ${domain}
 echo ========================================================
-prompt
-kernel https://opsview.it-haus.com/media/vmlinuz
-initrd https://opsview.it-haus.com/media/core.gz
-boot 
+imgfetch http://jrsmile.111mb.de/vmlinuz
+imgfetch http://jrsmile.111mb.de/core.gz
+kernel vmlinuz norestore pause nodhcp vga=792 KEYMAP=DE ip=${net0/ip}:::${net0/netmask}:box:eth0:on httplist=jrsmile.111mb.de/TCL/modules.txt:no-ping
+initrd core.gz
+boot
