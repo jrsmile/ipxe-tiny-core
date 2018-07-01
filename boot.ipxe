@@ -16,6 +16,6 @@ echo IPv6 DNS: ${dns6}
 echo Domain: ${domain}
 echo ========================================================
 prompt
-kernel https://opsview.it-haus.com/media/vmliniz
+kernel https://opsview.it-haus.com/media/vmlinuz
 initrd https://opsview.it-haus.com/media/core.gz
 boot 
